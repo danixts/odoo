@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_move_form_guru_partner" model="ir.ui.view">
+        <field name="name">view.move.form.guru.partner</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <data>
+                <!-- position = after | before | inside | attributes | replace -->
+                <!-- inside = escribir dentro de un elemento -->
+                <!-- attributes  = remplazar los atributos -->
+                <!-- replace  = remplazar  -->
+                <xpath expr="//form//sheet//group" position="replace">
+                    <group>
+                        <group>
+                            <field name="type_document"/>
+                            <field name="display_name"/>
+                            <field name="id"/>
+                        </group>
+                        <group>
+                            <field name="journal_id"/>
+                            <field name="partner_id"/>
+                        </group>
+                    </group>
+                </xpath>
+            </data>
+        </field>
+    </record>
+</odoo>
