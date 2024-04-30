@@ -14,11 +14,12 @@ Guru Base Module
     'category': 'Uncategorized',
     'version': '1.0',
 
-    'depends': ['base'],
+    'depends': ['base', 'mail'],
 
     'data': [
         'security/ir.model.access.csv',
         'views/view_guru_model.xml',
+        'views/view_guru_user.xml',
         'views/view_menu.xml',
     ],
 }
