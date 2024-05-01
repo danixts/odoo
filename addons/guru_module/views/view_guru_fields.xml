@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_guru_fields" model="ir.ui.view">
+        <field name="name">view.guru.fields</field>
+        <field name="model">guru.fields</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="multiple"/>
+                        <field name="value_a"/>
+                        <field name="value_b"/>
+                        <field name="result"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_guru_fields_tree" model="ir.ui.view">
+        <field name="name">view.guru.fields.tree</field>
+        <field name="model">guru.fields</field>
+        <field name="arch" type="xml">
+            <tree delete="1" create="1" duplicate="0">
+                <field name="value_a"/>
+                <field name="value_b"/>
+                <field name="result"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_guru_fields" model="ir.actions.act_window">
+        <field name="name">Guru Module</field>
+        <field name="res_model">guru.fields</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

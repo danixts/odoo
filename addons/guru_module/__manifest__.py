@@ -18,8 +18,10 @@ Guru Base Module
 
     'data': [
         'security/ir.model.access.csv',
+        'security/security_model.xml',
         'views/view_guru_model.xml',
         'views/view_guru_user.xml',
+        'views/view_guru_fields.xml',
         'views/view_menu.xml',
     ],
 }

@@ -2,3 +2,4 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_guru_model,guru_model,model_guru_model,,1,1,1,1
 access_guru_user,guru_user,model_guru_user,,1,1,1,1
 access_guru_currency,guru_currency,model_guru_currency,,1,1,1,1
+access_guru_fields,guru_fields,model_guru_fields,,1,1,1,1

@@ -5,6 +5,11 @@
         <field name="model">guru.model</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button name="press_button" string="Print" class="oe_highlight" invisible="1 if not status == 'draft' else 0" type="object" data-hotkey="n"/>
+                    <button name="press_log" string="Print Log" class="" invisible="1 if not status == 'pending' else 0" type="object" data-hotkey="v"/>
+                    <field name="status" widget="statusbar"/>
+                </header>
                 <sheet>
                     <group>
                         <field name="first_name"/>
@@ -12,8 +17,10 @@
                         <field name="is_active" invisible="1"/>
                         <field name="age" invisible="is_active"/>
                         <field name="amount"/>
-<!--                        <field name="user_id" widget="selection"/>-->
-<!--                        <field name="currency_id" options="{'no_edit': True, 'no_create': True}"/>-->
+                        <field name="users_ids" widget="many2many_tags"/>
+                        <field name="note"/>
+                        <!--                        <field name="user_id" widget="selection"/>-->
+                        <!--                        <field name="currency_id" options="{'no_edit': True, 'no_create': True}"/>-->
                     </group>
                 </sheet>
             </form>
@@ -31,6 +38,7 @@
                 <field name="age"/>
                 <field name="amount" optional="1"/>
                 <field name="create_uid" optional="1"/>
+                <field name="user_id" optional="1"/>
             </tree>
         </field>
     </record>
@@ -39,5 +47,6 @@
         <field name="name">Guru Module</field>
         <field name="res_model">guru.model</field>
         <field name="view_mode">tree,form</field>
+        <field name="domain">[('user_id','=',uid)]</field>
     </record>
 </odoo>

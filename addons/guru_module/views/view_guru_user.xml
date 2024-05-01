@@ -24,6 +24,7 @@
                         <field name="nit"/>
                         <field name="status"/>
                         <field name="birth_date"/>
+                        <field name="gender"/>
                         <field name="note"/>
                     </group>
                     <notebook>

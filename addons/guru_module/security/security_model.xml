@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="auth_guru_module" model="ir.module.category">
+        <field name="name">Guru Module</field>
+        <field name="description">Auth Module</field>
+        <field name="sequence">10</field>
+    </record>
+
+    <record id="guru_module_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="category_id" ref="auth_guru_module"/>
+    </record>
+
+    <record id="guru_model_rule" model="ir.rule">
+        <field name="name">Rule Guru</field>
+        <field name="model_id" ref="guru_module.model_guru_model"/>
+        <field name="domain_force">[('user_id','=',user.id)]</field>
+        <field name="groups" eval="[(4, ref('guru_module.guru_module_user'))]"/>
+    </record>
+</odoo>
