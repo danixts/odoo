@@ -5,12 +5,16 @@
         <field name="model">guru.fields</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button name="handle_modal" string="Open Modal" class="oe_highlight" type="object" data-hotkey="n"/>
+                </header>
                 <sheet>
                     <group>
                         <field name="multiple"/>
                         <field name="value_a"/>
                         <field name="value_b"/>
                         <field name="result"/>
+                        <field name="result_modal"/>
                     </group>
                 </sheet>
             </form>

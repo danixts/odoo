@@ -44,6 +44,13 @@ class GuruModule(models.Model):
         _logger.info(f'DESDE PRES_LOG {self.first_name} {self.last_name}')
 
     def press_button(self):
+        context = self._context.get('active_model', False)
+        if context == 'guru.fields':
+            self.write({
+                "note": "desde mi modal"
+            })
+            return
+
         users = []
         for rec in self.users_ids:
             payload = {

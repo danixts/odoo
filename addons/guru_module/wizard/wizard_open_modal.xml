@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="wizard_guru_open_modal" model="ir.ui.view">
+        <field name="name">wizard.guru.open.modal</field>
+        <field name="model">guru.open.modal</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="value_a"/>
+                            <field name="value_b"/>
+                            <field name="user_id"/>
+                            <field name="currency_id"/>
+                        </group>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="handle_button_click" string="Calculate" class="oe_highlight" type="object"
+                            data-hotkey="n"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

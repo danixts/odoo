@@ -3,3 +3,5 @@ access_guru_model,guru_model,model_guru_model,,1,1,1,1
 access_guru_user,guru_user,model_guru_user,,1,1,1,1
 access_guru_currency,guru_currency,model_guru_currency,,1,1,1,1
 access_guru_fields,guru_fields,model_guru_fields,,1,1,1,1
+
+access_guru_open_modal,guru_open_modal,model_guru_open_modal,,1,1,1,1
