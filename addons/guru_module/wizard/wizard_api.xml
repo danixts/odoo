@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="wizard_guru_open_api" model="ir.ui.view">
+        <field name="name">wizard.guru.open.api</field>
+        <field name="model">guru.open.api</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="todo_id"/>
+                        </group>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="handle_button_click" string="Fetch Api" class="oe_highlight" type="object"
+                            data-hotkey="n"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_guru_api_open" model="ir.actions.act_window">
+        <field name="name">Fetch Api</field>
+        <field name="res_model">guru.open.api</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="wizard_guru_open_api"/>
+        <field name="target">new</field>
+    </record>
+</odoo>

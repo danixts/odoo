@@ -26,6 +26,7 @@
         <field name="model">guru.fields</field>
         <field name="arch" type="xml">
             <tree delete="1" create="1" duplicate="0">
+                <field name="id"/>
                 <field name="value_a"/>
                 <field name="value_b"/>
                 <field name="result"/>

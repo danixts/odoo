@@ -6,8 +6,11 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <button name="press_button" string="Print" class="oe_highlight" invisible="1 if not status == 'draft' else 0" type="object" data-hotkey="n"/>
-                    <button name="press_log" string="Print Log" class="" invisible="1 if not status == 'pending' else 0" type="object" data-hotkey="v"/>
+                    <button name="press_button" string="Print" class="oe_highlight"
+                            invisible="1 if not status == 'draft' else 0" type="object" data-hotkey="n"/>
+                    <button name="press_log" string="Print Log" class="" invisible="1 if not status == 'pending' else 0"
+                            type="object" data-hotkey="v"/>
+                    <button name="print_pdf" string="Print Pdf" class="oe_highlight" type="object" data-hotkey="x"/>
                     <field name="status" widget="statusbar"/>
                 </header>
                 <sheet>

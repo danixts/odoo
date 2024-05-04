@@ -17,4 +17,14 @@
               name="Test"
               parent="menu_guru_module_root"
               sequence="2" action="action_guru_fields"/>
+
+    <menuitem id="menu_guru_modal"
+              name="Fetch Api"
+              parent="menu_guru_module_root"
+              sequence="4" action="action_guru_api_open"/>
+
+    <menuitem id="menu_guru_model_api"
+              name="Api Data"
+              parent="menu_guru_module_root"
+              sequence="5" action="action_guru_api"/>
 </odoo>

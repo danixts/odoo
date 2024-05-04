@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_guru_model">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.basic_layout">
+                        <div class="page">
+                            <h1>Hola desde report</h1>
+                            <div class="text-center">
+                                <p style="color:red">
+                                    State
+                                    <t t-esc="o.status"/>
+                                </p>
+                                <p style="color: blue">
+                                    Names
+                                    <t t-esc="o.first_name"/>
+                                    <t t-esc="o.last_name"/>
+                                </p>
+                                <p>
+                                    Amount
+                                    <t t-esc="o.amount"/>
+                                </p>
+                                <p>
+                                    Note
+                                    <t t-esc="o.note"/>
+                                </p>
+                            </div>
+                            <t t-if="len(o.users_ids) > 0">
+                                <h4 style="text-align:center">Detalle Usuarios</h4>
+                                <table class="table mt-4">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Phone</th>
+                                            <th scope="col">Birth Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-foreach="o.users_ids" t-as="user">
+                                            <tr>
+                                                <th>
+                                                    <div t-esc="user.last_name"/>
+                                                </th>
+                                                <th>
+                                                    <div t-esc="user.email"/>
+                                                </th>
+                                                <th>
+                                                    <div t-esc="user.phone"/>
+                                                </th>
+                                                <th>
+                                                    <div t-esc="user.birth_date"/>
+                                                </th>
+                                            </tr>
+                                        </t>
+                                    </tbody>
+                                </table>
+                            </t>
+                            <div t-else="">
+                                <div class="p-3 mb-2 bg-primary text-white">
+                                    <p class="text-center">Sin Datos</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div t-if="fields">
+                            <p t-esc="'Valor A = ' + str(fields.value_a) + ' Valor B = ' + str(fields.value_b)"/>
+                            <h3 t-esc="'Result : ' +  str(fields.result)"/>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

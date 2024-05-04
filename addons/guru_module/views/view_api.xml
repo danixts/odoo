@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_guru_api" model="ir.ui.view">
+        <field name="name">view.guru.api</field>
+        <field name="model">guru.api</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="id"/>
+                        <field name="todo_id"/>
+                        <field name="title"/>
+                        <field name="completed"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_guru_api_tree" model="ir.ui.view">
+        <field name="name">view.guru.api.tree</field>
+        <field name="model">guru.api</field>
+        <field name="arch" type="xml">
+            <tree delete="1" create="1" duplicate="0">
+<!--                <field name="id"/>-->
+                <field name="todo_id"/>
+                <field name="title"/>
+                <field name="completed"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_guru_api" model="ir.actions.act_window">
+        <field name="name">Fetch Api</field>
+        <field name="res_model">guru.api</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

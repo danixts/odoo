@@ -22,8 +22,13 @@ Guru Base Module
         'views/view_guru_model.xml',
         'views/view_guru_user.xml',
         'views/view_guru_fields.xml',
+        'views/view_api.xml',
 
         'wizard/wizard_open_modal.xml',
+        'wizard/wizard_api.xml',
+
+        'report/report_action.xml',
+        'report/report_template.xml',
         'views/view_menu.xml',
     ],
 }

@@ -43,6 +43,11 @@ class GuruModule(models.Model):
     def press_log(self):
         _logger.info(f'DESDE PRES_LOG {self.first_name} {self.last_name}')
 
+    def print_pdf(self):
+        return self.env.ref('guru_module.action_guru_model').report_action(self)
+
+
+
     def press_button(self):
         context = self._context.get('active_model', False)
         if context == 'guru.fields':
