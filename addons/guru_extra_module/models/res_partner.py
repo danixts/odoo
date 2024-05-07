@@ -1,10 +1,7 @@
-from odoo import models, fields, api
-import logging
-
-_logger = logging.getLogger(__name__)
+from odoo import models, fields
 
 
 class ResPartner(models.Model):
-    _inherit = 'res.partner'
+    _inherit = "res.partner"
 
-    pin_code = fields.Char(string='Pin Code')
+    pin_code = fields.Char(string="Pin Code")

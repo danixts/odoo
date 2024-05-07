@@ -4,14 +4,14 @@ from odoo import models, fields, api
 
 
 class WizardOpenModal(models.TransientModel):
-    _name = 'guru.open.modal'
-    _description = 'Wizard Open Modal'
+    _name = "guru.open.modal"
+    _description = "Wizard Open Modal"
 
-    value_a = fields.Float('Value A')
+    value_a = fields.Float("Value A")
     value_b = fields.Float("Value B")
 
-    user_id = fields.Many2one('res.users', string='User')
-    currency_id = fields.Many2one('res.currency', string='Currency')
+    user_id = fields.Many2one("res.users", string="User")
+    currency_id = fields.Many2one("res.currency", string="Currency")
 
     @api.model
     def default_get(self, fields_list):
@@ -37,22 +37,26 @@ class WizardOpenModal(models.TransientModel):
         ###
 
         # SQL SELECT * FROM guru_fields WHERE user_id = 1 or user_id = 2
-        active_id = self._context.get('active_id')
-        model_active = self.env['guru.fields'].search([('id', '=', active_id)])
+        active_id = self._context.get("active_id")
+        model_active = self.env["guru.fields"].search([("id", "=", active_id)])
         if model_active:
             suma = self.value_a + self.value_b
-            model_active.write({
-                "result_modal": suma,
-            })
-            guru_model = self.env['guru.model'].create({
-                "is_active": True,
-                "first_name": "Modal",
-                "last_name": "Popup",
-                "age": 2,
-                "amount": 200,
-                "user_id": self.env.user.id,
-                # "note": F'Desde mi modal la suma es {suma}'
-            })
+            model_active.write(
+                {
+                    "result_modal": suma,
+                }
+            )
+            guru_model = self.env["guru.model"].create(
+                {
+                    "is_active": True,
+                    "first_name": "Modal",
+                    "last_name": "Popup",
+                    "age": 2,
+                    "amount": 200,
+                    "user_id": self.env.user.id,
+                    # "note": F'Desde mi modal la suma es {suma}'
+                }
+            )
             guru_model.press_button()
             print("CREATE OBJECT", guru_model)
             # self.env['res.partner'].create({

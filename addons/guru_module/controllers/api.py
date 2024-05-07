@@ -1,23 +1,29 @@
 # -*- coding: utf-8 -*-
 import json
 
-from odoo import models, fields, api, http
+from odoo import http
 from odoo.http import Response, request
 
 
 class ApiController(http.Controller):
-    @http.route('/api/v1/GuruModel', auth='public', methods=['GET'], csrf=False)
+    @http.route("/api/v1/GuruModel", auth="public", methods=["GET"], csrf=False)
     def get_guru_model(self, **kw):
-        guru_model = request.env['guru.model'].search_read(
-            fields=['id', 'first_name', 'last_name', 'note', 'is_active', 'user_id'],
-            domain=[("is_active", "=", True)]  # where
+        guru_model = request.env["guru.model"].search_read(
+            fields=["id", "first_name", "last_name", "note", "is_active", "user_id"],
+            domain=[("is_active", "=", True)],  # where
         )
-        return Response(json.dumps({
-            "data": guru_model,
-            "success": True,
-            "errorCode": "C000",
-            "message": "Service Guru Model Ok"
-        }), content_type='application/json', status=404)
+        return Response(
+            json.dumps(
+                {
+                    "data": guru_model,
+                    "success": True,
+                    "errorCode": "C000",
+                    "message": "Service Guru Model Ok",
+                }
+            ),
+            content_type="application/json",
+            status=404,
+        )
 
     # def get_guru_model(self, **kw):
     #     try:
