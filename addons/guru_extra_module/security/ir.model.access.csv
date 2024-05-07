@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_guru_extra_module_guru_extra_module,guru_extra_module.guru_extra_module,model_guru_extra_module_guru_extra_module,base.group_user,1,1,1,1

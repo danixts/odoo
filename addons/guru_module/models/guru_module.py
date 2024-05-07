@@ -42,11 +42,26 @@ class GuruModule(models.Model):
 
     def press_log(self):
         _logger.info(f'DESDE PRES_LOG {self.first_name} {self.last_name}')
+        # query = "select name, symbol, full_name from res_currency rc where active is true;"
+        query = "select id, first_name, last_name, note, is_active from guru_model where is_active is true order by id;"
+        self.env.cr.execute(query)
+        guru_model = self.env.cr.fetchall()
+        response = []
+        for model in guru_model:
+            id, first_name, last_name, note, is_active = model
+            response.append({
+                'id': id,
+                'first_name': first_name,
+                'last_name': last_name,
+                'note': note,
+                'is_active': is_active,
+            })
+
+        # self.env.cr.commit()
+        print(response)
 
     def print_pdf(self):
         return self.env.ref('guru_module.action_guru_model').report_action(self)
-
-
 
     def press_button(self):
         context = self._context.get('active_model', False)

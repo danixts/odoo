@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_guru_extra_module_model" model="ir.ui.view">
+        <field name="name">view.guru.extra.module.model</field>
+        <field name="model">guru.model</field>
+        <field name="inherit_id" ref="guru_module.view_guru_module"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form//sheet//group//field[@name='amount']" position="after">
+                <field name="key_id"/>
+            </xpath>
+             <xpath expr="//form//header//button[@name='print_pdf']" position="after">
+                <button name="press_extra_module" string="Press Other Module" class=""
+                            type="object" data-hotkey="u"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

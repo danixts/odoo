@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+  <t t-name="PartnerDetailsEdit" t-inherit="point_of_sale.PartnerDetailsEdit" t-inherit-mode="extension" owl="1">
+    <xpath expr="//section//div//div" position="after">
+      <div class="partner-detail col">
+          <label class="form-label label" for="pin_code">Pin Code</label>
+          <input class="detail vat form-control" id="pin_code" name="pin_code" t-model="changes.pin_code"/>
+      </div>
+    </xpath>
+  </t>
+</templates>
